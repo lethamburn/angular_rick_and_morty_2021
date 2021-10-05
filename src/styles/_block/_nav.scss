@@ -1,23 +1,28 @@
 .navigator {
   text-align: center;
+  align-items: center;
   img {
     width: 80%;
     padding: 20px;
   }
+  svg {
+    fill: $green;
+    margin-bottom: 20px;
+  }
   .navigator__list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 40px;
 
     .navigator__item {
       list-style: none;
+      margin-bottom: 30px;
 
       a {
         padding: 8px;
         background-color: $primary-color;
-        margin: 6px;
 
         border-radius: 12px;
         border: 3px solid $green;
