@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {
-  background-color: black;
-  color: white;
-}
+//Utilities
+@import "./_utilities/colors";
+@import "./_utilities/fonts";
+
+//General Styles
+@import "./_block/general";
+
+//Block Styles
+@import "./_block/nav";

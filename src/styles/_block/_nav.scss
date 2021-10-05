@@ -1,0 +1,37 @@
+.navigator {
+  text-align: center;
+  img {
+    width: 80%;
+    padding: 20px;
+  }
+  .navigator__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 40px;
+
+    .navigator__item {
+      list-style: none;
+
+      a {
+        padding: 8px;
+        background-color: $primary-color;
+        margin: 6px;
+
+        border-radius: 12px;
+        border: 3px solid $green;
+        font-family: "Creepster", cursive;
+        font-size: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $blue;
+
+        &:hover {
+          background-color: $yellow;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
