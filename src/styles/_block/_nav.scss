@@ -1,42 +1,180 @@
-.navigator {
+//Source: https://codepen.io/tonkec/pen/aRMaWR
+
+.main__logo{
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+  align-content: center;
+
+  padding: 10px;
+
+  img{
+    width: 75%;
+  }
+}
+nav {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.aside-section {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+}
+.aside-right {
+  width: 100%;
+  right: 0;
+  background-color: $secondary-color;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  background-image: url("https://i.gifer.com/embedded/download/Ir9.gif");
+  background-size: cover;
+}
+
+.aside-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 150px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.aside-list li {
+  margin-bottom: 20px;
   text-align: center;
-  align-items: center;
-  img {
-    width: 80%;
-    padding: 20px;
+}
+
+.aside-anchor::before {
+  border-radius: 3px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  background-color: $blue;
+  left: 0;
+  height: 3px;
+  z-index: 1;
+  width: 100%;
+  -webkit-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+}
+
+.aside-anchor:hover:before {
+  -webkit-transform: translateX(20%);
+  -moz-transform: translateX(20%);
+  -ms-transform: translateX(20%);
+  -o-transform: translateX(20%);
+  transform: translateX(20%);
+}
+
+.aside-anchor {
+  padding: 10px;
+  color: $green;
+  text-decoration: none;
+  font-size: 40px;
+  position: relative;
+  font-weight: 500;
+  font-family: "Creepster", cursive;
+
+  &:hover {
+    color: $secondary-color;
   }
-  svg {
-    fill: $green;
-    margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ aside .aside-left {
+  transform: translateY(0%);
+}
+
+input[type="checkbox"]:checked ~ aside .aside-right {
+  transform: translateX(0%);
+}
+
+input[type="checkbox"]:checked ~ label .bar {
+  background-color: $green;
+}
+
+input[type="checkbox"]:checked ~ label .top {
+  -webkit-transform: translateY(0px) rotateZ(45deg);
+  -moz-transform: translateY(0px) rotateZ(45deg);
+  -ms-transform: translateY(0px) rotateZ(45deg);
+  -o-transform: translateY(0px) rotateZ(45deg);
+  transform: translateY(0px) rotateZ(45deg);
+}
+
+input[type="checkbox"]:checked ~ label .bottom {
+  -webkit-transform: translateY(-15px) rotateZ(-45deg);
+  -moz-transform: translateY(-15px) rotateZ(-45deg);
+  -ms-transform: translateY(-15px) rotateZ(-45deg);
+  -o-transform: translateY(-15px) rotateZ(-45deg);
+  transform: translateY(-15px) rotateZ(-45deg);
+}
+
+input[type="checkbox"]:checked ~ label .middle {
+  width: 0;
+}
+
+.middle {
+  margin: 0 auto;
+}
+
+label {
+  top: 30px;
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 20px;
+  z-index: 3;
+  position: fixed;
+}
+
+.bar {
+  display: block;
+  background-color: $green;
+  width: 30px;
+  height: 3px;
+  border-radius: 5px;
+  margin: 5px auto;
+  transition: background-color 0.4s ease-in, transform 0.4s ease-in,
+    width 0.4s ease-in;
+}
+
+.button {
+  display: inline-block;
+  background-image: none;
+  border: none;
+  background-color: transparent;
+  padding-bottom: 7px;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  color: white;
+  padding: 7px 50px;
+  border: 2px solid white;
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 40px;
   }
-  .navigator__list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 40px;
+  .aside-left {
+    display: block;
+  }
 
-    .navigator__item {
-      list-style: none;
-      margin-bottom: 30px;
-
-      a {
-        padding: 8px;
-        background-color: $primary-color;
-
-        border-radius: 12px;
-        border: 3px solid $green;
-        font-family: "Creepster", cursive;
-        font-size: 20px;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $blue;
-
-        &:hover {
-          background-color: $yellow;
-          color: $primary-color;
-        }
-      }
-    }
+  .aside-right {
+    width: 60%;
   }
 }
