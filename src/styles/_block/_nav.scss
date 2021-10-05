@@ -1,24 +1,21 @@
 //Source: https://codepen.io/tonkec/pen/aRMaWR
 
-.main__logo{
+.main__logo {
   position: relative;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   flex-direction: row;
   align-content: center;
-
   padding: 10px;
 
-  img{
+  img {
     width: 75%;
   }
 }
 nav {
   height: 100%;
-  width: 100%;
   overflow: hidden;
-  z-index: 1;
 }
 .aside-section {
   top: 0;
