@@ -1,1 +1,13 @@
-<p>planets works!</p>
+<div class="planets">
+  <h1>Planets</h1>
+  <div class="planets__card" *ngFor="let planet of planetsList">
+    <img src="../../../assets/images/planet.gif" alt="planet Portrait" />
+    <h2>{{ planet.name }}</h2>
+    <p>
+      Type: <span>{{ planet.type }}</span>
+    </p>
+    <p>
+      Dimensions: <span>{{ planet.dimension }}</span>
+    </p>
+  </div>
+</div>
