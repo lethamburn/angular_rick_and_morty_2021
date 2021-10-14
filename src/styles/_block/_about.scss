@@ -30,6 +30,19 @@
   iframe {
     border: 3px solid $green;
     border-radius: 10px;
+    width: 90%;
+    height: 250px;
+  }
+
+  @include desktop{
+    iframe{
+      width: 40%;
+      height: 250px;
+    }
+    p{
+      margin-left: 60px;
+      margin-right: 60px;
+    }
   }
   .about__footer {
     margin-top: 50px;
