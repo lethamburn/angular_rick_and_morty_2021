@@ -16,6 +16,11 @@
     margin-top: 50px;
     width: 70%;
   }
+  @include desktop{
+    img{
+      width: 20%;
+    }
+  }
   strong {
     color: $green;
   }

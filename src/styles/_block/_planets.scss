@@ -1,3 +1,14 @@
+.planets-container {
+  text-align: center;
+  h1 {
+    font-family: "Creepster", cursive;
+    color: $green;
+    font-weight: lighter;
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+
 .planets {
   display: flex;
   flex-direction: column;
@@ -5,15 +16,8 @@
   align-items: center;
   padding: 4px;
 
-  h1 {
-    font-family: "Creepster", cursive;
-    color: $green;
-    font-weight: lighter;
-    padding: 10px;
-  }
-
   .planets__card {
-      width: 80%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,6 +50,17 @@
     .planets__residents {
       display: flex;
       flex-flow: row wrap;
+    }
+  }
+}
+
+@include desktop{
+  .planets{
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .planets__card{
+      width: 20%;
     }
   }
 }

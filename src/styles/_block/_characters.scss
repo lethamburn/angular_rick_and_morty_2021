@@ -1,16 +1,21 @@
-.characters {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 4px;
+.characters-container {
+  text-align: center;
 
   h1 {
     font-family: "Creepster", cursive;
     color: $green;
     font-weight: lighter;
     padding: 10px;
+    margin-top: 10px;
   }
+}
+
+.characters {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
 
   .characters__card {
     display: flex;
@@ -20,7 +25,7 @@
     margin: 8px;
     padding: 14px;
     border-radius: 10px;
-    color: $blue;
+    color: $green;
     border: solid 3px $green;
 
     h2 {
@@ -35,12 +40,19 @@
       border: solid 3px $green;
       margin-bottom: 8px;
     }
-    p{
-        font-weight: bold;
+    p {
+      font-weight: bold;
 
-        span{
-            color: $secondary-color;
-        }
+      span {
+        color: $secondary-color;
+      }
     }
+  }
+}
+
+@include desktop {
+  .characters {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

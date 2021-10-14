@@ -11,12 +11,17 @@
     margin-bottom: 10px;
     width: 60%;
   }
+
+  @include desktop {
+    img {
+      width: 30%;
+    }
+  }
 }
 nav {
   position: sticky;
   height: auto;
   border-bottom: 3px solid $green;
-  
 
   .nav_list {
     display: flex;
@@ -25,23 +30,44 @@ nav {
     align-content: center;
     border-top: 3px solid $green;
     padding-top: 10px;
-     padding-bottom: 10px;
+    padding-bottom: 10px;
     padding-left: 20px;
-    background-image: url("../../assets/images/backgroundgif.gif")
+    background-image: url("../../assets/images/backgroundgif.gif");
   }
 
-    li {
-      list-style: none;
+  li {
+    list-style: none;
 
-      a {
-        text-decoration: none;
+    a {
+      text-decoration: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 60%;
+      }
+      p {
+        display: none;
+        font-family: "Creepster", cursive;
+        color: $green;
+        font-weight: lighter;
+        font-size: 2em;
+        padding: 10px;
+        margin-top: 10px;
+      }
+      @include desktop {
         img {
-          width: 60%;
+          width: 20%;
         }
+        p {
+          display: contents;
+        }
+      }
+
+      &:hover {
+        filter:hue-rotate(120deg)
       
-        &:hover {
-        }
       }
     }
   }
- 
+}
