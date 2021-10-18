@@ -9,16 +9,14 @@ export class CharactersService {
   public pageNum: number = 1;
   constructor(private httpClient: HttpClient) { }
 
-  sumPage(): any {
-    this.pageNum + 1;
-    this.getCharacters();
-  }
+
   getCharacters(): Observable<any> {
-    
+
     return this.httpClient.get(
-      `https://rickandmortyapi.com/api/character`
+      `https://rickandmortyapi.com/api/character/?page=${this.pageNum}`
     );
   }
+  
   getCharacter = (idCharacter: any) => {
     return this.httpClient.get(
       `https://rickandmortyapi.com/api/character/${idCharacter}`
