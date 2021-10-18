@@ -6,21 +6,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CharactersService {
-  public pageNum: number = 1;
+
   constructor(private httpClient: HttpClient) { }
 
-
-  getCharacters(): Observable<any> {
-
+  getCharacters(page: number = 1): Observable<any> {
     return this.httpClient.get(
-      `https://rickandmortyapi.com/api/character/?page=${this.pageNum}`
+      `https://rickandmortyapi.com/api/character/?page=${page}`
     );
   }
-  
+
   getCharacter = (idCharacter: any) => {
     return this.httpClient.get(
       `https://rickandmortyapi.com/api/character/${idCharacter}`
     );
   };
 
+  nextPage = (page: number = 2) => {
+    return this.httpClient.get(`https://rickandmortyapi.com/api/character/?page=${page}`)
+  }
 }

@@ -1,6 +1,6 @@
 import { CharactersService } from 'src/app/services/characters.service';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-character-detail',
@@ -10,17 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class CharacterDetailComponent implements OnInit {
   character: any;
   constructor(private route: ActivatedRoute,
-    private charactersService: CharactersService) { }
+    public charactersService: CharactersService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       const idCharacter = params.get('idCharacter');
-      console.log("ID CHARACTER", idCharacter);
-      
+
       this.charactersService
         .getCharacter(idCharacter)
         .subscribe((characterData) => {
-          console.log(characterData);
           this.character = characterData;
         });
     });

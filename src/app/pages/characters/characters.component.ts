@@ -9,14 +9,15 @@ import { CharactersService } from 'src/app/services/characters.service';
 })
 export class CharactersComponent implements OnInit {
   public charactersList: Character[] = [];
-  @Input() pageNum: any;
-  
-  constructor(private charactersService: CharactersService) {}
-  
+
+  constructor(public charactersService: CharactersService) { }
+
   ngOnInit(): void {
     this.charactersService.getCharacters().subscribe((apiCharacters) => {
       this.charactersList = apiCharacters.results;
       console.log('API CHARACTERS:', this.charactersList);
     });
+
   }
+
 }
