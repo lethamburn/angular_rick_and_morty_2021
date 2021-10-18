@@ -1,13 +1,11 @@
 <div class="characters-container">
-<h1>Characters</h1>
-<div class="characters">
-  <div class="characters__card" *ngFor="let character of charactersList">
-    <h2>{{ character.name }}</h2>
-    <img src="{{ character.image }}" alt="Character Portrait" />
-    <p>Species: <span>{{ character.species }}</span></p>
-    <p>Gender: <span>{{ character.gender }}</span></p>
-    <p>Origin: <span>{{ character.origin.name }}</span></p>
-    <p>Status: <span>{{ character.status }}</span></p>
+  <h1>Characters</h1>
+  <p><span>ℹ</span> - Click on any character to view more information</p>
+  <div class="characters">
+    <div class="characters__card" *ngFor="let character of charactersList" routerLink={{character.id}}>
+      <h2>{{ character.name }}</h2>
+      <img src="{{ character.image }}" alt="{{character.name}}" />
+    </div>
   </div>
-</div>
+  <!--   <button (click)="sumPage()">Next</button> -->
 </div>

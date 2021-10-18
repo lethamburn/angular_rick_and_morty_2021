@@ -1,15 +1,28 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { Character } from '../models/character';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CharactersService {
-  constructor(private httpClient: HttpClient) {}
+  public pageNum: number = 1;
+  constructor(private httpClient: HttpClient) { }
 
-  getCharacters(): Observable<any> {
-    return this.httpClient.get('https://rickandmortyapi.com/api/character');
+  sumPage(): any {
+    this.pageNum + 1;
+    this.getCharacters();
   }
+  getCharacters(): Observable<any> {
+    
+    return this.httpClient.get(
+      `https://rickandmortyapi.com/api/character`
+    );
+  }
+  getCharacter = (idCharacter: any) => {
+    return this.httpClient.get(
+      `https://rickandmortyapi.com/api/character/${idCharacter}`
+    );
+  };
+
 }

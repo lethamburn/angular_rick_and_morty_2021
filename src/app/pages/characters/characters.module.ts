@@ -7,7 +7,7 @@ import { CharactersComponent } from './characters.component';
 
 @NgModule({
   declarations: [
-    CharactersComponent
+    CharactersComponent,
   ],
   imports: [
     CommonModule,

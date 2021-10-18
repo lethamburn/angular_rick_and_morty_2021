@@ -7,6 +7,14 @@
     font-weight: lighter;
     padding: 10px;
     margin-top: 10px;
+
+   
+  }
+  p{
+    color: $green;
+  }
+  span{
+    color: $secondary-color;
   }
 }
 
@@ -16,6 +24,19 @@
   justify-content: center;
   align-items: center;
   padding: 4px;
+
+  a{
+    text-decoration: none;
+    color: $green;
+    text-transform: uppercase;
+
+    &:hover{
+      color: $secondary-color;
+    }
+    &::before{
+      content: "⬅"
+    }
+  }
 
   .characters__card {
     display: flex;
@@ -47,7 +68,9 @@
         color: $secondary-color;
       }
     }
+    
   }
+ 
 }
 
 @include desktop {

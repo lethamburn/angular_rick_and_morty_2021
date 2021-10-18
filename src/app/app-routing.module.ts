@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: ``, 
+    path: ``,
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/characters/characters.module').then(
         (m) => m.CharactersModule
+      ),
+  },
+  {
+    path: `characters/:idCharacter`,
+    loadChildren: () =>
+      import('./pages/character-detail/character-detail.module').then(
+        (m) => m.CharacterDetailModule
       ),
   },
   {
@@ -35,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
